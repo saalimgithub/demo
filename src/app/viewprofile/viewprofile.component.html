@@ -1,0 +1,19 @@
+<div class="container col-md-6">
+    <table class="table table-bordered">
+       <thead class="thead-dark">
+        <tr>
+            <th>S.No</th>
+            <th >Name</th>
+            <th >Mobile</th>
+            <th >Delete</th>
+           
+        </tr>
+       </thead>
+        <tr *ngFor="let profile of pofile;index as i">
+               <td>{{i+1}}</td>
+               <td>{{profile.name}}</td>
+               <td>{{profile.mobilenumber}}</td>
+               <td><button class="btn btn-danger" (click)="delete()">Delete</button></td>
+        </tr>
+    </table>
+</div>

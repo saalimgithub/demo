@@ -1,0 +1,21 @@
+<div class="container">
+    <form  #form="ngForm"   (ngSubmit)="addProfile(form)"  method="post" class="form-group bg-warning" >
+        <div class="m-2">
+              <label class="text-danger" for="exampleInputEmail1">Enter Name</label>
+            <input placeholder="Enter name" type="text" [(ngModel)]="profile.name" class="form-control" name="name">
+        </div>
+        <div class="m-2">
+          <label class="text-danger" for="exampleInputEmail1" >Enter Password</label>
+            <input placeholder="Enter password" [(ngModel)]="profile.password" type="password" class="form-control" name="password">
+         </div>
+        <div class="m-2">
+              <label class="text-danger" for="exampleInputEmail1">Enter Mobile Number</label>
+            <input placeholder="Enter Mobile Number" type="number" class="form-control" name="mobilenumber" [(ngModel)]="profile.mobilenumber">
+        </div>
+        <div class="text-center m-2">
+        <button  type="submit" class="btn btn-success">
+          Submit
+        </button>
+        </div>
+    </form>
+</div>

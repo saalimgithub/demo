@@ -1,0 +1,102 @@
+{{interpolation |uppercase}}
+<br>
+{{interpolation +" this is lower case pipe" |lowercase}}
+<br>
+<br>
+
+{{enable?status1:status2}}
+
+<br>
+
+
+<h1> using $event</h1>
+
+<button (click)="addtocart($event)" value="Laptop">Laptop</button>
+<button (click)="addtocart($event)" value="TV">TV</button>
+<button (click)="addtocart($event)" value="Machine">Machine</button>
+
+{{msg}}
+
+
+<br>
+<input type="text" value="washing Machine" [disabled]="false">
+<br>
+<input type="text" value="{{interpolation}}" [disabled]="true">
+<br>
+{{enable?status1:status2}}
+
+<br>
+<br>
+
+<button (click)="clicks()">Click</button>
+
+<div *ngIf="enables;else elseblock then thenblock">
+
+</div>
+<ng-template #elseblock>
+    no block created
+</ng-template>
+<ng-template #thenblock>
+    block created
+</ng-template>
+
+
+
+<br>
+<br>
+<hr>
+<hr>
+<h2>
+    Switch case
+</h2>
+<br>
+<div class="container">
+    <select name="" id="" class="form-control" (change)="products($event)">
+        <option value="default"> Please Select Product</option>
+        <option value="Laptop"> Laptop</option>
+        <option value="TV">TV</option>
+        <option value="Washing Machine">Washing Machine</option>
+    </select>
+    <div class="container" [ngSwitch]="selectedproduct">
+        <h2 *ngSwitchDefault>Please Select</h2>
+        <h2 *ngSwitchCase="'Laptop'">Laptop</h2>
+        <h2 *ngSwitchCase="'TV'">TV</h2>
+        <h2 *ngSwitchCase="'Washing Machine'">Washing Machine</h2>
+    </div>
+</div>
+
+<hr>
+<hr>
+<img src="" alt="" >
+<div class="container bg-success">
+    <div class="row ">
+        <div class="col-md-6 m-2">
+            <table class="table table-bordered ">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>S.no</th>
+                        <th>img</th>
+                        <th>Name</th>
+                        <th>price</th>
+                        <th>Delete</th>
+                    </tr>
+                    <tr *ngFor="let gros of groceries;index as i">
+                        <td>{{i+1}}</td>
+                        <td> <img src="{{gros.img}}" alt="" style="width: 100px"> </td>
+                        <td>{{gros.name}}</td>
+                        <td>{{gros.price}}</td>
+                        <td><button class="btn btn-danger" (click)="delete(i)">Delete Product</button></td>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+        <div class="col-md-4">
+            <input type="file" class="form-control" placeholder="img" #img>
+            <input type="text" class="form-control" placeholder="enter product name" #name>
+            <input type="text" class="form-control" placeholder="enter price" #price>
+            <button (click)="addproducts(img,name,price)">Add Products</button>
+        </div>
+    </div>
+
+
+</div>
