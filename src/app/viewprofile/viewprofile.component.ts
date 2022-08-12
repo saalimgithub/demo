@@ -25,6 +25,8 @@ pofile:any
   delete(data: any) {
     this.ps.delete(data).subscribe(a => {
       console.log("delete ")
+      alert("deleted Succesfully")
+      this.ngOnInit()
     })
   }
 
