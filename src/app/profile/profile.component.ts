@@ -16,10 +16,12 @@ export class ProfileComponent implements OnInit {
   profiles: any
   ngOnInit(): void {
   }
-
+routing(){
+  this.route.navigate(['/view'])
+}
   addProfile(data: NgForm) {
     this.ps.addProfile(this.profile).subscribe(va => {
-      this.route.navigate(['/view'])
+     this.routing()
       console.log(va)
     }, er => {
       console.log(er)

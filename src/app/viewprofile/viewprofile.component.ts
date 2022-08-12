@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { ProfileService } from '../profile.service';
 
 @Component({
@@ -8,10 +9,13 @@ import { ProfileService } from '../profile.service';
 })
 export class ViewprofileComponent implements OnInit {
 
-  constructor(private ps:ProfileService) { }
+  constructor(private ps:ProfileService,private routes:Router) { }
 pofile:any
   ngOnInit(): void {
     this.view();
+  }
+  routing(){
+    this.routes.navigate(['/view'])
   }
   view(){
     this.ps.viewProfile().subscribe(data=>{
@@ -26,7 +30,7 @@ pofile:any
     this.ps.delete(data).subscribe(a => {
       console.log("delete ")
       alert("deleted Succesfully")
-      this.ngOnInit()
+     this.routing()
     })
   }
 
