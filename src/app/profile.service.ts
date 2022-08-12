@@ -19,7 +19,7 @@ viewProfile():Observable<any>{
   return this.http.get(`${this.baseurl}`+`view`);
 }
 
-delete(){
-  return this.http.delete(`${this.baseurl}`+`delete\id`);
+delete(id:number){
+  return this.http.delete(`${this.baseurl}`+`delete/`+id);
 }
 }

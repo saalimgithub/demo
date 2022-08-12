@@ -22,8 +22,10 @@ pofile:any
     })
   }
 
-  delete(){
-
+  delete(data: any) {
+    this.ps.delete(data).subscribe(a => {
+      console.log("delete ")
+    })
   }
 
 }

@@ -11,20 +11,22 @@ import { ProfileService } from '../profile.service';
 })
 export class ProfileComponent implements OnInit {
 
-  profile:Profile=new Profile();
-  constructor(private ps:ProfileService, private route:Router) { }
-profiles:any
+  profile: Profile = new Profile();
+  constructor(private ps: ProfileService, private route: Router) { }
+  profiles: any
   ngOnInit(): void {
   }
 
-  addProfile(data:NgForm){
-  this.ps.addProfile(this.profile).subscribe(va=>{
-    this.route.navigate(['/view'])
-    console.log(va)
-  },er=>{
-    console.log(er)
-  })
-  console.log(this.profile)
+  addProfile(data: NgForm) {
+    this.ps.addProfile(this.profile).subscribe(va => {
+      this.route.navigate(['/view'])
+      console.log(va)
+    }, er => {
+      console.log(er)
+    })
+    console.log(this.profile)
   }
 
+
+ 
 }
